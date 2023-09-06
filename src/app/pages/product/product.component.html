@@ -1,0 +1,40 @@
+<!-- <button class="btn btn-primary" style="margin-left: 2px;" (click)="AddProduct(product)">Add Product</button> -->
+<table class="table table-inverse table-bordered customStyling">
+    <thead>
+        <tr>
+            <th>
+                ProductName
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Available Stock
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>
+                {{ product.productName }}
+            </td>
+            <td>
+                {{ product.description }}
+            </td>
+            <td>
+                {{ product.price }}
+            </td>
+            <td>
+                {{ product.quantity }}
+            </td>
+            <td>
+                <button class="btn btn-info" (click)="EditProduct(product.productID)">Edit</button>
+                <button class="btn btn-danger" style="margin-left: 2px;" (click)="DeleteProduct(product.productID)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
